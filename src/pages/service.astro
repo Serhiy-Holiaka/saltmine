@@ -1,0 +1,13 @@
+---
+import { t, changeLanguage } from "i18next";
+import Layout from "../layouts/Layout.astro";
+
+changeLanguage("en");
+---
+
+<Layout title="Welcome to Astro.">
+		<h1>{t('service.title')}</h1>
+		<p class="text-lg text-red-600 uppercase">
+			{t('service.subtitle')}
+		</p>
+</Layout>

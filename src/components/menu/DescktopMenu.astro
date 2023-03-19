@@ -1,16 +1,22 @@
 ---
+import { t } from 'i18next';
+import { localizePath } from 'astro-i18next';
+
 const { menuList } = Astro.props;
+const { pathname } = Astro.url;
 ---
 
-<div class="hidden xl:flex">
-    {
-        menuList.map(({ title, href }) => (
-            <a
-                class="block text-sm xl:text-base leading-none whitespace-nowrap py-3 mr-[15px] 2xl:mr-[30px] last:pr-0 border-b border-transparent hover:text-yellow hover:border-yellow transition duration-150"
-                href={href}
-            >
-                {title}
-            </a>
-        ))
-    }
-</div>
+<nav class='hidden xl:flex'>
+  {
+    menuList.map(({ title, href }) => (
+      <a
+        class={`${
+          pathname === localizePath(href) ? 'active' : ''
+        } block text-sm xl:text-base leading-none whitespace-nowrap py-3 mr-[15px] 2xl:mr-[30px] last:pr-0 border-b border-transparent hover:text-yellow hover:border-yellow transition duration-150`}
+        href={localizePath(href)}
+      >
+        {t(`menu.${title}`)}
+      </a>
+    ))
+  }
+</nav>

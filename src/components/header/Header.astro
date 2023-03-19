@@ -1,63 +1,81 @@
 ---
-import { Image } from "@astrojs/image/components";
-import DescktopMenu from "../menu/DescktopMenu.astro";
-import MobileMenu from "../menu/MobileMenu.astro";
+import { localizePath } from 'astro-i18next';
+import { Image } from '@astrojs/image/components';
+import DescktopMenu from '../menu/DescktopMenu.astro';
+import MobileMenu from '../menu/MobileMenu.astro';
+import LanguageMenu from '../menu/LanguageMenu.astro';
 
 const navMenuList = [
-    {
-        title: "Home",
-        href: "/",
-    },
-    {
-        title: "Service/Products",
-        href: "/service",
-    },
-    {
-        title: "Portfolio",
-        href: "/portfolio",
-    },
-    {
-        title: "Free/Sale",
-        href: "/sale",
-    },
-    {
-        title: "Useful information",
-        href: "/info",
-    },
-    {
-        title: "News",
-        href: "/news",
-    },
-    {
-        title: "Contact",
-        href: "/contact",
-    },
+  {
+    title: 'home',
+    href: '/',
+  },
+  {
+    title: 'service',
+    href: '/service',
+  },
+  {
+    title: 'portfolio',
+    href: '/portfolio',
+  },
+  {
+    title: 'sale',
+    href: '/sale',
+  },
+  {
+    title: 'info',
+    href: '/info',
+  },
+  {
+    title: 'news',
+    href: '/news',
+  },
+  {
+    title: 'contact',
+    href: '/contact',
+  },
 ];
 ---
 
 <header
-    class="flex items-center justify-between max-w-[1920px] h-[156px] px-[30px] xl:px-[70px]"
+  class='flex items-center justify-between max-w-[1920px] h-[120px] xl:h-[156px] px-[30px] xl:px-[70px]'
 >
-    <div class="flex items-end">
-        <a href="/">
-            <Image
-                width={190}
-                height={59}
-                format="svg"
-                src="/images/logo-black.svg"
-                alt="logo-img"
-                class="min-w-[130px] xl:max-w-[170px]"
-            />
-        </a>
-        <p
-            class="text-base xl:text-xl !leading-[120%] whitespace-nowrap font-medium text-gray border-l-[1px] border-[#838383] ml-4 pl-4"
-        >
-            Professional building <br /> of salt rooms
-        </p>
-    </div>
-    <div class="flex">
-        <DescktopMenu menuList={navMenuList} />
-        <div class="flex items-center ml-[30px] 2xl:ml-[70px]">language</div>
-        <MobileMenu />
-    </div>
+  <div class='flex items-end'>
+    <a href={localizePath('/')}>
+      <Image
+        width={190}
+        height={59}
+        format='svg'
+        src='/images/logo-black.svg'
+        alt='logo-img'
+        class='min-w-[130px] xl:max-w-[170px]'
+      />
+    </a>
+    <p
+      class='text-base xl:text-xl !leading-[120%] whitespace-nowrap font-medium text-gray border-l-[1px] border-[#838383] ml-4 pl-4'
+    >
+      Professional building <br /> of salt rooms
+    </p>
+  </div>
+  <div class='flex'>
+    <DescktopMenu menuList={navMenuList} />
+    <LanguageMenu />
+    <MobileMenu menuList={navMenuList} />
+  </div>
 </header>
+
+{/*<script>
+  const outclick = document.getElementById('global');
+  const menuBlock = document.getElementById('menu');
+  const menuLangBlock = document.getElementById('menuLang');
+
+  const handleClick = () => {
+    menuBlock.classList.add('invisible', '-translate-y-10', 'opacity-0');
+    menuBlock.classList.remove('visable', 'translate-y-0', 'opacity-1');
+    menuLangBlock.classList.add('invisible', '-translate-y-10', 'opacity-0');
+    menuLangBlock.classList.remove('visable', 'translate-y-0', 'opacity-1');
+    console.log('Click-1');
+  };
+
+  outclick.addEventListener('click', handleClick);
+</script>*/}

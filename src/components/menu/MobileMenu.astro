@@ -1,10 +1,86 @@
 ---
-import { Icon } from 'astro-icon';
+import { t } from 'i18next';
+import { localizePath } from 'astro-i18next';
+
+const { menuList } = Astro.props;
+const { pathname } = Astro.url;
 ---
 
-<div>
-    <button
-        class="flex items-center justify-center w-8 h-8 xl:hidden"
-        ><Icon name="icon-park-outline:hamburger-button" /></button
-    >
+<div class='relative z-[3] xl:hidden'>
+    <div
+      id='outsideMenu'
+      class='invisible fixed top-0 left-0 right-0 bottom-0 z-[4]'
+    ></div>
+  <button
+    id='menuBtn'
+    class='relative flex flex-col items-center justify-around w-10 h-7 z-[3]'
+    ><span
+      id='top-line'
+      class='absolute top-[6px] w-7 h-[2px] bg-gray transition-transform duration-200'
+    ></span><span id='mid-line' class='absolute w-7 h-[2px] bg-gray'
+    ></span><span
+      id='bottom-line'
+      class='absolute top-[20px] w-7 h-[2px] bg-gray transition-transform duration-200'
+    ></span></button
+  >
+  <nav
+    id='menu'
+    class='invisible absolute top-[40px] right-0 z-[5] flex flex-col w-[300px] bg-white rounded-lg -translate-y-10 opacity-0 transition-all duration-150 shadow-lg'
+  >
+    {
+      menuList.map(({ title, href }) => (
+        <a
+          class={`${
+            pathname === localizePath(href) ? 'active' : ''
+          } block text-base leading-none whitespace-nowrap text-center py-4 last:pr-0 border-b border-gray-400 border-opacity-10 last:border-transparent`}
+          href={localizePath(href)}
+        >
+          {t(`menu.${title}`)}
+        </a>
+      ))
+    }
+  </nav>
 </div>
+
+<script>
+  const outclick = document.getElementById('outsideMenu');
+  const menuButton = document.getElementById('menuBtn');
+  const menuBlock = document.getElementById('menu');
+  const topLine = document.getElementById('top-line');
+  const midLine = document.getElementById('mid-line');
+  const bottomLine = document.getElementById('bottom-line');
+  let flag = true;
+
+  const handleClick = () => {
+    if (flag) {
+      menuBlock.classList.remove('invisible', '-translate-y-10', 'opacity-0');
+      menuBlock.classList.add('visable', 'translate-y-0', 'opacity-1');
+      topLine.classList.remove('rotate-0', 'top-[6px]');
+      midLine.classList.remove('visable');
+      bottomLine.classList.remove('rotate-0', 'top-[20px]');
+      topLine.classList.add('rotate-[135deg]', 'top-[14px]');
+      midLine.classList.add('invisible');
+      bottomLine.classList.add('-rotate-[135deg]', 'top-[14px]');
+      outclick.classList.remove('invisible');
+      outclick.classList.add('visible');
+      flag = false;
+    }
+  };
+
+  const onCloseMenu = () => {
+    menuBlock.classList.add('invisible', '-translate-y-10', 'opacity-0');
+    menuBlock.classList.remove('visable', 'translate-y-0', 'opacity-1');
+    topLine.classList.remove('rotate-[135deg]', 'top-[14px]');
+    midLine.classList.remove('invisible');
+    bottomLine.classList.remove('-rotate-[135deg]', 'top-[14px]');
+    topLine.classList.add('rotate-0', 'top-[6px]');
+    midLine.classList.add('visable');
+    bottomLine.classList.add('rotate-0', 'top-[20px]');
+    outclick.classList.add('invisible');
+    outclick.classList.remove('visible');
+    flag = true;
+  };
+
+  menuButton.addEventListener('click', handleClick);
+  outclick.addEventListener('click', onCloseMenu);
+</script>

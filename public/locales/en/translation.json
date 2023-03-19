@@ -1,0 +1,19 @@
+{
+  "menu": {
+    "home": "Home",
+    "service": "Service/Products",
+    "portfolio": "Portfolio",
+    "sale": "Free/Sale",
+    "info": "Useful information",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Welcome to Astro!",
+    "subtitle": "This is a multilanguages, test site developed on Astro!"
+  },
+  "service": {
+    "title": "Welcome to Service",
+    "subtitle": "This is a Service page of site!"
+  }
+}
