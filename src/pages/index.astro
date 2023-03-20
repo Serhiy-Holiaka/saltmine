@@ -1,14 +1,11 @@
 ---
-import i18next, { t, changeLanguage } from "i18next";
+import { changeLanguage } from "i18next";
+import Hero from "../components/hero/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 
 changeLanguage("en");
 ---
 
 <Layout title="Welcome to Astro.">
-		<h1>{t('home.title')}</h1>
-		<p class="text-lg text-red-600 uppercase">
-			{t('home.subtitle')}
-		</p>
-        <p>Current language - {i18next.language}</p>
+	<Hero />
 </Layout>
