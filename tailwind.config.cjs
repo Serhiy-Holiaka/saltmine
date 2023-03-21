@@ -31,6 +31,7 @@ module.exports = {
                 gray: {
                     DEFAULT: "var(--gray)",
                     dark: "var(--gray-dark)",
+                    light: "var(--gray-light)",
                 },
             },
         },
