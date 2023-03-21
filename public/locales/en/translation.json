@@ -15,5 +15,9 @@
   "service": {
     "title": "Welcome to Service",
     "subtitle": "This is a Service page of site!"
+  },
+  "general": {
+    "page404": "Page not found",
+    "desc404": "or this page is not available now!"
   }
 }

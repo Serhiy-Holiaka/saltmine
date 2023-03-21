@@ -1,13 +1,13 @@
 ---
-import { t, changeLanguage } from "i18next";
+import { changeLanguage } from "i18next";
 import Layout from "../layouts/Layout.astro";
 
 changeLanguage("en");
 ---
 
-<Layout title="Welcome to Astro.">
-		<h1>{t('service.title')}</h1>
-		<p class="text-lg text-red-600 uppercase">
-			{t('service.subtitle')}
-		</p>
+<Layout title="Page Service">
+    <div class="flex flex-col justify-center items-center w-full h-screen font-sans bg-blue-light -mt-[159px]">
+        <h1 class="font-sans text-5xl font-medium">Service page</h1>
+        <h2 class="font-sans text-2xl text-gray-dark font-medium pt-5">Page is not available in demo mode!</h2>
+    </div>
 </Layout>
