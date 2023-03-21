@@ -12,26 +12,26 @@ module.exports = {
             fontFamily: {
                 sans: ["Gilroy", ...defaultTheme.fontFamily.sans],
             },
-        },
-        colors: {
-            transparent: "transparent",
-            white: {
-                DEFAULT: "var(--white)",
-            },
-            blue: {
-                light: "var(--blue-light)",
-            },
-            black: {
-                DEFAULT: "var(--black)",
-                light: "var(--black-light)",
-                dark: "var(--black-dark)",
-            },
-            yellow: {
-                DEFAULT: "var(--yellow)",
-            },
-            gray: {
-                DEFAULT: "var(--gray)",
-                dark: "var(--gray-dark)",
+            colors: {
+                transparent: "transparent",
+                white: {
+                    DEFAULT: "var(--white)",
+                },
+                blue: {
+                    light: "var(--blue-light)",
+                },
+                black: {
+                    DEFAULT: "var(--black)",
+                    light: "var(--black-light)",
+                    dark: "var(--black-dark)",
+                },
+                yellow: {
+                    DEFAULT: "var(--yellow)",
+                },
+                gray: {
+                    DEFAULT: "var(--gray)",
+                    dark: "var(--gray-dark)",
+                },
             },
         },
     },
