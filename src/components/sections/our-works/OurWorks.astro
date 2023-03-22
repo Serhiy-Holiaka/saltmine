@@ -1,24 +1,48 @@
 ---
-import { t } from "i18next";
-import SectionLayout from "../../../layouts/SectionLayout.astro";
+import { t } from 'i18next';
+import SectionLayout from '../../../layouts/SectionLayout.astro';
+import ImageCard from '../../cards/ImageCard.astro';
 ---
 
-<SectionLayout sectionClasses="bg-black-dark" textColor="text-white" title={t('home.our-works')}>
-    <div class="grid grid-cols-2 gap-8 mt-[52px] [&_div]:rounded-lg [&_div]:overflow-hidden">
-        <div class="grid col-span-1 h-[608px] bg-green-300"></div>
-        <div class="grid grid-col-2 gap-8 col-span-1 h-[608px]">
-            <div class="col-span-2 bg-green-800 h-[361px]"></div>
-            <div class="bg-green-800 h-[217px]">
-                
-            </div>
-            <div class="bg-green-800 h-[217px]"></div>
-        </div>
-        <div class="grid grid-cols-4 gap-8 col-span-2">
-            <div class="bg-green-800 h-[217px]"></div>
-            <div class="bg-green-600 h-[217px]"></div>
-            <div class="bg-green-700 h-[217px]"></div>
-            <div class="bg-green-800 h-[217px]"></div>
-        </div>
-        
+<SectionLayout
+  sectionClasses='bg-black-dark'
+  textColor='text-white'
+  title={t('home.our-works')}
+>
+  <div
+    class='grid grid-cols-2 gap-8 mt-[52px] [&_div]:rounded-lg [&_div]:overflow-hidden'
+  >
+    <div class='grid col-span-1 h-[608px]'>
+      <ImageCard
+        image='gallery-1.webp'
+        title='Yuho Care Hospital, Beijing, China'
+      />
     </div>
+    <div class='grid grid-col-2 gap-8 col-span-1 h-[608px]'>
+      <div class='col-span-2 h-[361px]'>
+        <ImageCard
+          image='gallery-2.webp'
+          title='Yuho Care Hospital'
+        />
+      </div>
+      <div class='h-[217px]'>
+        <ImageCard image='gallery-3.webp' title='Care Hospital' />
+      </div>
+      <div class='h-[217px]'><ImageCard image='gallery-4.webp' title='Care Hospital' /></div>
+    </div>
+    <div class='grid grid-cols-4 gap-8 col-span-2'>
+      <div class='h-[217px]'>
+        <ImageCard image='gallery-5.webp' title='Care Hospital' />
+      </div>
+      <div class='h-[217px]'>
+        <ImageCard image='gallery-6.webp' title='Care Hospital' />
+      </div>
+      <div class='h-[217px]'>
+        <ImageCard image='gallery-7.webp' title='Care Hospital' />
+      </div>
+      <div class='h-[217px]'>
+        <ImageCard image='gallery-8.webp' title='See all works' />
+      </div>
+    </div>
+  </div>
 </SectionLayout>

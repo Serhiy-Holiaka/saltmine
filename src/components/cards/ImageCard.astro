@@ -1,8 +1,16 @@
 ---
+import { Image } from "@astrojs/image/components";
 
+export interface Props {
+    image: string;
+    title: string;
+    href?: string;
+}
+
+const { image, title, href="/portfolio" } = Astro.props;
 ---
 
-<a href="#" class="relative w-full h-full">
-    <img class="absolute w-full h-full" src="" alt="project-img" />
-    <p></p>
+<a href={href} class="relative flex items-center justify-center w-full h-full after:absolute after:w-full after:h-full after:bg-transparent after:z-[2] hover:after:bg-black-light hover:after:opacity-50 [&_p]:hover:visible [&_p]:hover:opacity-100 after:transition">
+    <Image width={600} height={600} class="absolute w-full h-full object-cover z-[2]" format="webp" src={`/images/gallery/${image}`} alt="project-img" />
+    <p class="relative text-xl text-white font-medium opacity-0 invisible z-[3] transition">{title}</p>
 </a>
