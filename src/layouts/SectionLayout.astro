@@ -1,0 +1,16 @@
+---
+export interface Props {
+  title: string,
+  sectionClasses?: string,
+  textColor?: string,
+}
+
+const { title, sectionClasses='', textColor='text-black-light' } = Astro.props;
+---
+
+<section class={`w-full py-[70px] px-[30px] xl:px-[70px] ${sectionClasses}`}>
+    <div class="w-full max-w-[1110px] mx-auto">
+        <h2 class={`text-[42px] leading-[150%] font-medium text-center ${textColor}`}>{title}</h2>
+        <slot />
+    </div>
+</section>

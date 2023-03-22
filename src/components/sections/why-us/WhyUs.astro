@@ -1,0 +1,32 @@
+---
+import { t } from "i18next";
+import PointCard from "../../cards/PointCard.astro";
+import SectionLayout from "../../../layouts/SectionLayout.astro";
+import PincipleCard from "../../cards/PincipleCard.astro";
+import { POINT_CARDS, PRINCIPLE_CARDS } from "../../../constants/constants";
+---
+
+<SectionLayout sectionClasses="bg-blue-light" title={t('home.why-us-title')}>
+    <div class="grid grid-cols-3 gap-8 mt-[52px] mb-[140px]">
+        {
+            POINT_CARDS.map(({ title, points }) => (
+                <PointCard title={title} pointsList={points} />
+            ))
+        }
+    </div>
+    <h2
+        class="text-[42px] leading-[150%] font-medium text-center text-black-light"
+    >
+        {t('home.our-priciple')}
+    </h2>
+    <div class="grid grid-cols-3 gap-8 mt-[60px]">
+        {
+            PRINCIPLE_CARDS.map(({ image, desc }) => (
+                <PincipleCard
+                    image={image}
+                    description={desc}
+                />
+            ))
+        }
+    </div>
+</SectionLayout>

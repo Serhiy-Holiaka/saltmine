@@ -1,11 +1,13 @@
 ---
 import { changeLanguage } from "i18next";
-import Hero from "../../components/hero/Hero.astro";
+import Hero from "../../components/sections/hero/Hero.astro";
+import WhyUs from "../../components/sections/why-us/WhyUs.astro";
 import Layout from "../../layouts/Layout.astro";
 
 changeLanguage("ua");
 ---
 
 <Layout title="Welcome to Astro.">
-	<Hero />
+    <Hero />
+    <WhyUs />
 </Layout>

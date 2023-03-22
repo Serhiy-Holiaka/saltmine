@@ -1,4 +1,4 @@
-import ArrowIcon from '../../ui/icons/ArrowIcon';
+import ArrowIcon from '../../../ui/icons/ArrowIcon';
 
 const HeroSlide = ({ image, href, title }) => {
     return (

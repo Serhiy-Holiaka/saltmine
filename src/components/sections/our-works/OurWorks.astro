@@ -1,0 +1,24 @@
+---
+import { t } from "i18next";
+import SectionLayout from "../../../layouts/SectionLayout.astro";
+---
+
+<SectionLayout sectionClasses="bg-black-dark" textColor="text-white" title={t('home.our-works')}>
+    <div class="grid grid-cols-2 gap-8 mt-[52px] [&_div]:rounded-lg [&_div]:overflow-hidden">
+        <div class="grid col-span-1 h-[608px] bg-green-300"></div>
+        <div class="grid grid-col-2 gap-8 col-span-1 h-[608px]">
+            <div class="col-span-2 bg-green-800 h-[361px]"></div>
+            <div class="bg-green-800 h-[217px]">
+                
+            </div>
+            <div class="bg-green-800 h-[217px]"></div>
+        </div>
+        <div class="grid grid-cols-4 gap-8 col-span-2">
+            <div class="bg-green-800 h-[217px]"></div>
+            <div class="bg-green-600 h-[217px]"></div>
+            <div class="bg-green-700 h-[217px]"></div>
+            <div class="bg-green-800 h-[217px]"></div>
+        </div>
+        
+    </div>
+</SectionLayout>

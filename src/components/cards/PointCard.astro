@@ -1,0 +1,32 @@
+---
+import { Image } from "@astrojs/image/components";
+
+export interface Props {
+    title: string;
+    point?: string;
+    pointsList: string[]
+}
+
+const {
+    title,
+    pointsList,
+} = Astro.props;
+---
+
+<ul>
+    <h5 class="text-2xl font-semibold pb-8">{title}</h5>
+    {
+        pointsList.map((point) => (
+            <li class="flex items-start mb-6 last:mb-0">
+                <Image
+                    width={24}
+                    height={24}
+                    format="svg"
+                    src="/images/icon/check_icon.svg"
+                    alt="checkmark-icon"
+                />
+                <span class="pl-5">{point}</span>
+            </li>
+        ))
+    }
+</ul>

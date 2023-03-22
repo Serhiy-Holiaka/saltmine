@@ -1,9 +1,10 @@
+import { t } from "i18next";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
-import CallIcon from '../../ui/icons/CallIcon';
+import CallIcon from '../../../ui/icons/CallIcon';
 import HeroSlider from './HeroSlide';
-import { SLIDER_LIST } from '../../../constants/constants';
-import ArrowIcon from '../../ui/icons/ArrowIcon';
+import { SLIDER_LIST } from '../../../../constants/constants';
+import ArrowIcon from '../../../ui/icons/ArrowIcon';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';

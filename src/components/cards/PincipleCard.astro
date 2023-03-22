@@ -1,0 +1,24 @@
+---
+import { Image } from "@astrojs/image/components";
+
+export interface Props {
+    image: string;
+    description: string;
+}
+
+const { image, description } = Astro.props;
+---
+
+<div class="flex flex-col py-[52px] px-[30px] rounded-lg bg-white">
+    <Image
+        width={52}
+        height={52}
+        format="svg"
+        src={`/images/icon/${image}`}
+        alt="card-icon"
+        class="h-[52px] w-auto max-w-[52px]"
+    />
+    <p class="text-lg leading-[150%] text-gray-dark mt-8 max-h-[81px] line-clamp-3 overflow-ellipsis overflow-hidden">
+        {description}
+    </p>
+</div>
