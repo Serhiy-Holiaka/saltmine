@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 changeLanguage("en");
 ---
 
-<Layout isHeader={false} title="Page 404">
+<Layout isHeader={false} isFooter={false} title="Page 404">
     <div class="flex flex-col justify-center items-center w-full h-screen font-sans bg-blue-light">
         <h1 class="font-sans text-5xl font-medium">{t('general.page404')} - 404</h1>
         <h2 class="font-sans text-2xl text-gray-dark font-medium pt-5">{t('general.desc404')}</h2>

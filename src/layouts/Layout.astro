@@ -1,114 +1,118 @@
 ---
-import i18next from 'i18next';
-import { HeadHrefLangs } from 'astro-i18next/components';
-import Header from '../components/header/Header.astro';
+import i18next from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
+import Header from "../components/header/Header.astro";
+import Footer from "../components/footer/Footer.astro";
 
 export interface Props {
-  title: string,
-  isHeader?: boolean
+    title: string;
+    isHeader?: boolean;
+    isFooter?: boolean;
 }
 
-const { title, isHeader = true } = Astro.props;
+const { title, isHeader = true, isFooter = true } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang={i18next.language}>
-  <head>
-    <meta charset='UTF-8' />
-    <meta
-      name='viewport'
-      content='width=device-width, initial-scale=1.0, maximum-scale=1.0'
-    />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
-    <HeadHrefLangs />
-    <title>{title}</title>
-  </head>
-  <body>
-    {isHeader && <Header />}
-    <main>
-      <slot />
-    </main>
-  </body><style is:global>
-    @import 'swiper/css';
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <HeadHrefLangs />
+        <title>{title}</title>
+    </head>
+    <body>
+        {isHeader && <Header />}
+        <main>
+            <slot />
+        </main>
+        {isFooter && <Footer />}
+        <style is:global>
+            @import "swiper/css";
 
-    @font-face {
-      font-family: 'Gilroy';
-      src: url('/fonts/Gilroy-Light.woff2') format('woff2');
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Gilroy';
-      src: url('/fonts/Gilroy-Regular.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Gilroy';
-      src: url('/fonts/Gilroy-Medium.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Gilroy';
-      src: url('/fonts/Gilroy-Semibold.woff') format('woff');
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Gilroy';
-      src: url('/fonts/Gilroy-Bold.woff2') format('woff2');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    :root {
-      --white: #ffffff;
-      --blue-light: #f6f7fe;
-      --black: #000000;
-      --black-light: #212121;
-      --black-dark: #181818;
-      --yellow: #f0cc13;
-      --gray: #7b8487;
-      --gray-dark: #555b5e;
-      --gray-light: #bcbcbc;
-    }
-    html {
-      background-color: var(--white);
-    }
-    .active {
-      color: var(--yellow);
-      border-color: var(--yellow);
-    }
-    .bullet-custom {
-      cursor: pointer;
-      transition: transform ease 0.3s;
-    }
-    .bullet-custom:hover > circle {
-      stroke: var(--white);
-    }
-    .active-point {
-        transform: scale(2);
-        margin-right: 25px;
-    }
-    .active-point:last-child {
-        margin-right: 0;
-    }
-    .active-point > circle {
-      stroke: var(--yellow);
-      stroke-dasharray: 30;
-      stroke-dashoffset: 30;
-      animation: stroke .7s ease-out forwards;
-    }
-    @keyframes stroke {  
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-  </style>
+            @font-face {
+                font-family: "Gilroy";
+                src: url("/fonts/Gilroy-Light.woff2") format("woff2");
+                font-weight: 300;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: "Gilroy";
+                src: url("/fonts/Gilroy-Regular.woff2") format("woff2");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: "Gilroy";
+                src: url("/fonts/Gilroy-Medium.woff2") format("woff2");
+                font-weight: 500;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: "Gilroy";
+                src: url("/fonts/Gilroy-Semibold.woff") format("woff");
+                font-weight: 600;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: "Gilroy";
+                src: url("/fonts/Gilroy-Bold.woff2") format("woff2");
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+            }
+            :root {
+                --white: #ffffff;
+                --blue-light: #f6f7fe;
+                --black: #000000;
+                --black-light: #212121;
+                --black-dark: #181818;
+                --yellow: #f0cc13;
+                --gray: #7b8487;
+                --gray-dark: #555b5e;
+                --gray-light: #bcbcbc;
+            }
+            html {
+                background-color: var(--white);
+            }
+            .active {
+                color: var(--yellow);
+                border-color: var(--yellow);
+            }
+            .bullet-custom {
+                cursor: pointer;
+                transition: transform ease 0.3s;
+            }
+            .bullet-custom:hover > circle {
+                stroke: var(--white);
+            }
+            .active-point {
+                transform: scale(2);
+                margin-right: 25px;
+            }
+            .active-point:last-child {
+                margin-right: 0;
+            }
+            .active-point > circle {
+                stroke: var(--yellow);
+                stroke-dasharray: 30;
+                stroke-dashoffset: 30;
+                animation: stroke 0.7s ease-out forwards;
+            }
+            @keyframes stroke {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+        </style>
+    </body>
 </html>

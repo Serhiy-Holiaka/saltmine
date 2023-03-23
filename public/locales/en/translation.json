@@ -13,7 +13,12 @@
     "subtitle": "This is a multilanguages, test site developed on Astro!",
     "why-us-title": "Why us?",
     "our-priciple": "Our Principles",
-    "our-works": "Our Works"
+    "our-works": "Our Works",
+    "statistic": "Statistic",
+    "about-us": "About us",
+    "numbers": "Numbers",
+    "video": "Video",
+    "for-you": "For you"
   },
   "service": {
     "title": "Welcome to Service",

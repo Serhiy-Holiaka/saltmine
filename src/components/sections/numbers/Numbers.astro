@@ -1,0 +1,26 @@
+---
+import { t } from "i18next";
+import SectionLayout from "../../../layouts/SectionLayout.astro";
+import NumberCard from "../../cards/NumberCard.astro";
+import { NUMBER_CARDS } from "../../../constants/constants";
+---
+
+<SectionLayout sectionClasses="bg-white" title={t("home.numbers")}>
+    <div class="grid grid-cols-4 gap-5 mt-[72px] [&>div]:flex [&>div]:flex-col [&>div]:items-center">
+        {
+            NUMBER_CARDS.map(({ number, text }) => (
+                <div>
+                    <NumberCard number={number} text={text} />
+                </div>
+            ))
+        }
+    </div>
+    <h2
+        class="text-[42px] leading-[150%] font-medium text-center text-black-light mt-[140px] mb-[52px]"
+    >
+        {t('home.video')}
+    </h2>
+    <div>
+        Video
+    </div>
+</SectionLayout>

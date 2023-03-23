@@ -34,6 +34,9 @@ module.exports = {
                     light: "var(--gray-light)",
                 },
             },
+            gridTemplateColumns: {
+               'footer': 'minmax(400px, 470px) 150px minmax(180px, 210px) 110px',
+              }
         },
     },
     plugins: [require("flowbite/plugin"), require('@tailwindcss/line-clamp')],

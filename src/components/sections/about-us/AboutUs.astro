@@ -1,0 +1,57 @@
+---
+import { t } from "i18next";
+import SectionLayout from "../../../layouts/SectionLayout.astro";
+import { Image } from "@astrojs/image/components";
+---
+
+<SectionLayout sectionClasses="bg-blue-light pb-0" title={t("home.about-us")}>
+    <div class="flex justify-center gap-[85px] mt-[52px]">
+        <div class="w-full max-w-[540px]">
+            <h5 class="text-2xl leading-[150%] font-semibold mb-8">
+                With our salt room you will get an oasis of health, youth and
+                beauty.
+            </h5>
+            <p class="text-[15px] text-gray-dark font-medium leading-[150%]">
+                Years of experience of our company guarantee you a high quality
+                service for salt room construction on the highest technical and
+                design level in accordance with modern requirements and advances
+                in medicine. We offer you not just building a salt room, but
+                also training and consultation in this business. <br /><br /> We
+                provide necessary medical, technical and advertising documentation.
+                Our customers are hotels, sanatoriums, hospitals, spas, fitness centers,
+                saunas, educational institutions and private clients in Ukraine,
+                Qatar, Georgia and China. There is a system of discounts for new
+                countries.
+            </p>
+            <div class="grid grid-cols-2 gap-8 mt-[52px] [&>div]:rounded-lg [&>div]:overflow-hidden">
+                <div>
+                    <Image
+                        width={255}
+                        height={137}
+                        format="webp"
+                        src="/images/about-us-1.webp"
+                        alt="about us image"
+                    />
+                </div>
+                <div>
+                    <Image
+                        width={255}
+                        height={137}
+                        format="webp"
+                        src="/images/about-us-2.webp"
+                        alt="about us image"
+                    />
+                </div>
+            </div>
+        </div>
+        <div>
+            <Image
+                width={445}
+                height={614}
+                format="webp"
+                src="/images/about-us-img.webp"
+                alt="about us image"
+            />
+        </div>
+    </div>
+</SectionLayout>

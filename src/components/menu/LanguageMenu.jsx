@@ -1,7 +1,9 @@
 import { useState } from "react";
+import ArrowDownIcon from "../ui/icons/ArrowDownIcon";
 
-const LanguageMenu = ({ children, locale }) => {
+const LanguageMenu = ({ children, locale, labelColor = 'text-black-light', arrowColor = 'dark' }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const iconColor =  arrowColor === 'dark' ? '[&>path]:stroke-black-light' : '[&>path]:stroke-gray-light';
 
     const handleClick = () => {
         setIsOpen((prev) => !prev);
@@ -21,8 +23,8 @@ const LanguageMenu = ({ children, locale }) => {
                 className="relative flex flex-row items-center justify-around h-7 z-[3]"
             >
                 <img width={30} height={18} src={`/images/icon/${locale.icon}`} alt="flag" />
-                <span className="pl-[12px] pr-[5px]">{locale.label}</span>
-                <img src="/images/icon/arrow_down_icon.svg" alt="arrow-icon" />
+                <span className={`pl-[12px] pr-[5px] font-medium ${labelColor}`}>{locale.label}</span>
+                <ArrowDownIcon className={iconColor} />
             </button>
             <nav
                 className={`absolute top-[40px] right-0 z-[5] flex flex-col w-[150px] bg-white rounded-lg ${

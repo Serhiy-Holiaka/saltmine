@@ -106,3 +106,49 @@ export const PRINCIPLE_CARDS = [
         desc: 'We carefully approach the recruitment process because our team is our greatest value.'
     }
 ];
+
+export const NUMBER_CARDS = [
+    {
+        number: '150',
+        text: 'Salt rooms built by us'
+    },
+    {
+        number: '13',
+        text: 'Years on the market of salt room construction'
+    },
+    {
+        number: '1M',
+        text: 'Kg of salt or 50 trucks of salt used by us'
+    },
+    {
+        number: '5 000',
+        text: 'Clients a day visit our salt rooms'
+    },
+]
+
+export const FOR_YOU_CARDS = [
+    {
+        title: "We guarantee",
+        points: [
+            "Individual designer's approach",
+            "The highest ecological and technical quality",
+            "Term of salt room service is more than 20 years"
+        ],
+    },
+    {
+        title: "We perform",
+        points: [
+            "Turnkey works",
+            "Salt room construction for any budget",
+            "Modernization of outdated salt rooms"
+        ],
+    },
+    {
+        title: "Free",
+        points: [
+            "Information and advisory support in salt room business",
+            "Staff training",
+            "Promotional brochures and methodical documentation"
+        ],
+    },
+]

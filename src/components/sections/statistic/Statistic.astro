@@ -1,0 +1,25 @@
+---
+import { t } from "i18next";
+import SectionLayout from "../../../layouts/SectionLayout.astro";
+import { Image } from "@astrojs/image/components";
+---
+
+<SectionLayout sectionClasses="bg-white" title={t('home.statistic')}>
+    <div class="flex justify-center gap-[84px] mt-[52px]">
+        <div class="relative">
+            <Image width={410} height={410} aspectRatio="1:1" format="svg" src="/images/chart.svg" alt="chart" />
+            <Image class="absolute top-[24%] left-[24.5%] w-[53%] object-cover" width={220} height={220} aspectRatio="1:1" format="webp" src="/images/chart-img.webp" alt="chart" />
+        </div>
+        <div class="flex items-center">
+            <ul class="text-lg text-gray-dark font-medium leading-none [&_li]:mb-6 [&_li]:flex [&_li]:items-center">
+                <li><span class="block w-[10px] h-[10px] rounded-full bg-[#F0CC13]"></span><span class="text-black-dark font-semibold ml-3 mr-1">24.8%</span> Medical organizations (public and private)</li>
+                <li><span class="block w-[10px] h-[10px] rounded-full bg-[#00A3FF]"></span><span class="text-black-dark font-semibold ml-3 mr-1">19.2%</span>Private salt rooms (in the house)</li>
+                <li><span class="block w-[10px] h-[10px] rounded-full bg-[#3CCE9C]"></span><span class="text-black-dark font-semibold ml-3 mr-1">18.4%</span> Spas, sports centers, saunas</li>
+                <li><span class="block w-[10px] h-[10px] rounded-full bg-[#F73A38]"></span><span class="text-black-dark font-semibold ml-3 mr-1">17.6%</span> Health centers, sanatoriums</li>
+                <li><span class="block w-[10px] h-[10px] rounded-full bg-[#565AE9]"></span><span class="text-black-dark font-semibold ml-3 mr-1">9%</span> Hotels</li>
+                <li><span class="block w-[10px] h-[10px] rounded-full bg-[#48CFE1]"></span><span class="text-black-dark font-semibold ml-3 mr-1">7%</span> Companies with emissions harmful to the respiratory tracts</li>
+                <li><span class="block w-[10px] h-[10px] rounded-full bg-[#212121]"></span><span class="text-black-dark font-semibold ml-3 mr-1">4%</span> Educational institutions</li>
+            </ul>
+        </div>
+    </div>
+</SectionLayout>
