@@ -4,7 +4,8 @@ import { localizePath } from "astro-i18next";
 import { Image } from "@astrojs/image/components";
 import LanguageMenu from "../menu/LanguageMenu";
 import LanguageList from "../menu/LanguageList.astro";
-import { LANG_LIST } from "../../constants/constants";
+import { LANG_LIST, MENU_LIST } from "../../constants/constants";
+import FooterMenu from './FooterMenu.astro';
 
 const currentLanguage = i18next.language;
 const activeLanguage = LANG_LIST.find(
@@ -40,7 +41,9 @@ const activeLanguage = LANG_LIST.find(
                 © 1995-2023 Vedis | Developed and support Developers Company
             </p>
         </div>
-        <div>Column 2</div>
+        <div class="flex flex-col items-start">
+            <FooterMenu menuList={MENU_LIST} />
+        </div>
         <div class="flex flex-col">
             <h6 class="text-base text-gray-light font-medium">
                 If you have any questions, call right now

@@ -88,6 +88,12 @@ const { title, isHeader = true, isFooter = true } = Astro.props;
                 color: var(--yellow);
                 border-color: var(--yellow);
             }
+            .active-link {
+                color: var(--yellow);
+            }
+            .active-link:hover > svg {
+                visibility: hidden;
+            }
             .bullet-custom {
                 cursor: pointer;
                 transition: transform ease 0.3s;

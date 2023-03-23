@@ -24,7 +24,7 @@ const LanguageMenu = ({ children, locale, labelColor = 'text-black-light', arrow
             >
                 <img width={30} height={18} src={`/images/icon/${locale.icon}`} alt="flag" />
                 <span className={`pl-[12px] pr-[5px] font-medium ${labelColor}`}>{locale.label}</span>
-                <ArrowDownIcon className={iconColor} />
+                <ArrowDownIcon className={`${iconColor} ${isOpen ? 'rotate-180' : 'rotate-0'} transition-transform`} />
             </button>
             <nav
                 className={`absolute top-[40px] right-0 z-[5] flex flex-col w-[150px] bg-white rounded-lg ${

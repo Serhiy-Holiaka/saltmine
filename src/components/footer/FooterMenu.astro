@@ -1,0 +1,21 @@
+---
+import { t } from "i18next";
+import { localizePath } from "astro-i18next";
+import ArrowIcon from '../ui/icons/ArrowIcon';
+
+const { pathname } = Astro.url;
+const { menuList } = Astro.props;
+---
+
+{
+    menuList.map(({ title, href }) => (
+        <a
+            class={`${
+                pathname === localizePath(href) ? "active-link" : ""
+            } flex text-base text-gray-light font-medium leading-none whitespace-nowrap text-center py-[10px] first:pt-0 hover:text-yellow [&>svg]:hover:visible [&>svg]:hover:transform [&>svg]:hover:translate-x-[6px] transition`}
+            href={localizePath(href)}
+        >
+            {t(`menu.${title}`)}<ArrowIcon className="invisible ml-2 [&>path]:stroke-yellow transition-all duration-200 delay-150" />
+        </a>
+    ))
+}

@@ -35,7 +35,7 @@ module.exports = {
                 },
             },
             gridTemplateColumns: {
-               'footer': 'minmax(400px, 470px) 150px minmax(180px, 210px) 110px',
+               'footer': 'minmax(400px, 470px) 170px minmax(180px, 210px) 110px',
               }
         },
     },
