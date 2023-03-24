@@ -5,7 +5,7 @@ import { Image } from "@astrojs/image/components";
 ---
 
 <SectionLayout sectionClasses="bg-blue-light pb-0" title={t("home.about-us")}>
-    <div class="flex justify-center gap-[85px] mt-[52px]">
+    <div class="flex justify-center gap-[100px] mt-[52px]">
         <div class="w-full max-w-[540px]">
             <h5 class="text-2xl leading-[150%] font-semibold mb-8">
                 With our salt room you will get an oasis of health, youth and
@@ -44,7 +44,7 @@ import { Image } from "@astrojs/image/components";
                 </div>
             </div>
         </div>
-        <div>
+        <div class="relative flex items-end">
             <Image
                 width={445}
                 height={614}
@@ -52,6 +52,10 @@ import { Image } from "@astrojs/image/components";
                 src="/images/about-us-img.webp"
                 alt="about us image"
             />
+            <div class="absolute bottom-[18%] -left-[35px] min-w-[169px] py-4 px-5 border-[#f6f7fe] rounded-lg shadow bg-white">
+                <h6 class="text-[15px] text-black-light font-semibold">Yurii Shypelyk</h6>
+                <p class="text-[13px] text-gray-dark font-normal">General manager</p>
+            </div>
         </div>
     </div>
 </SectionLayout>

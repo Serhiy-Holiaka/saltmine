@@ -35,9 +35,13 @@ module.exports = {
                 },
             },
             gridTemplateColumns: {
-               'footer': 'minmax(400px, 470px) 170px minmax(180px, 210px) 110px',
-              }
+                video: "minmax(600px, 700px) minmax(300px, 390px)",
+                footer: "minmax(400px, 470px) 170px minmax(180px, 210px) 110px",
+            },
+            boxShadow: {
+                DEFAULT: "0 8px 30px 0 rgba(31, 34, 35, 0.25)"
+            },
         },
     },
-    plugins: [require("flowbite/plugin"), require('@tailwindcss/line-clamp')],
+    plugins: [require("flowbite/plugin"), require("@tailwindcss/line-clamp")],
 };
