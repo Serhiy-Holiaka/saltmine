@@ -5,7 +5,7 @@ import NumberCard from "../../cards/NumberCard.astro";
 import { NUMBER_CARDS } from "../../../constants/constants";
 ---
 
-<SectionLayout sectionClasses="bg-white" title={t("home.numbers")}>
+<SectionLayout sectionClasses="bg-white numbers-bg" title={t("home.numbers")}>
     <div class="grid grid-cols-4 gap-5 mt-[72px] [&>div]:flex [&>div]:flex-col [&>div]:items-center">
         {
             NUMBER_CARDS.map(({ number, text }) => (

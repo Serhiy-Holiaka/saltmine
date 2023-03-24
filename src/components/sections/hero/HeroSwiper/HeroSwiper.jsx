@@ -18,6 +18,7 @@ const HeroSwiper = () => {
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true
         }}
         loop={true}
         navigation={{

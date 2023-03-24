@@ -6,7 +6,7 @@ import PincipleCard from "../../cards/PincipleCard.astro";
 import { POINT_CARDS, PRINCIPLE_CARDS } from "../../../constants/constants";
 ---
 
-<SectionLayout sectionClasses="bg-blue-light" title={t('home.why-us-title')}>
+<SectionLayout sectionClasses="bg-blue-light why-us-bg" title={t('home.why-us-title')}>
     <div class="grid grid-cols-3 gap-8 mt-[52px] mb-[140px]">
         {
             POINT_CARDS.map(({ title, points }) => (

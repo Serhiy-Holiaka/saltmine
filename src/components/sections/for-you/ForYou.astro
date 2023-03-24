@@ -5,7 +5,7 @@ import PointCard from "../../cards/PointCard.astro";
 import { FOR_YOU_CARDS } from "../../../constants/constants";
 ---
 
-<SectionLayout sectionClasses="bg-blue-light" title={t("home.for-you")}>
+<SectionLayout sectionClasses="bg-blue-light for-you-bg" title={t("home.for-you")}>
     <div class="grid grid-cols-3 gap-8 mt-[52px]">
         {
             FOR_YOU_CARDS.map(({ title, points }) => (
