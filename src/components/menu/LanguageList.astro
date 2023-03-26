@@ -15,6 +15,7 @@ const { languages } = Astro.props;
         return (
             <a
                 href={value}
+                id="item"
                 class={`${
                     locale === currentLanguage ? "active" : ""
                 } block text-base leading-none whitespace-nowrap text-center py-4 last:pr-0 border-b border-gray-400 border-opacity-10 last:border-transparent`}
@@ -24,3 +25,8 @@ const { languages } = Astro.props;
         );
     })
 }
+
+<script>
+    const elem = document.getElementById('item');
+    elem.addEventListener('click', (e) => e.stopPropagation())
+</script>

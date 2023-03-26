@@ -104,19 +104,21 @@ export const PRINCIPLE_CARDS = [
 
 export const NUMBER_CARDS = [
     {
-        number: "150",
+        id: "count1",
         text: "Salt rooms built by us",
     },
     {
-        number: "13",
+        id: "count2",
         text: "Years on the market of salt room construction",
     },
     {
-        number: "1M",
+        id: "count3",
+        number: "M",
         text: "Kg of salt or 50 trucks of salt used by us",
     },
     {
-        number: "5 000",
+        id: "count4",
+        number: "000",
         text: "Clients a day visit our salt rooms",
     },
 ];

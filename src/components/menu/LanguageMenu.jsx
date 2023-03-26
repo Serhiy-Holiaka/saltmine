@@ -31,6 +31,7 @@ const LanguageMenu = ({ children, locale, labelColor = 'text-black-light', arrow
                 <ArrowDownIcon className={`${iconColor} ${isOpen ? 'rotate-180' : 'rotate-0'} transition-transform`} />
             </button>
             <nav
+                onClick={(e) => e.stopPropagation()}
                 className={`absolute top-[40px] right-0 z-[5] flex flex-col w-[150px] bg-white rounded-lg ${
                     isOpen
                         ? "translate-y-0 opacity-1 visible"

@@ -1,13 +1,14 @@
 ---
 export interface Props {
-    number: string;
+    number?: string;
     text: string;
+    id: string;
 }
 
-const { number, text } = Astro.props;
+const { number, text, id } = Astro.props;
 ---
 
 <div class="text-center">
-    <h6 class="text-[72px] text-yellow font-light leading-none uppercase mb-[36px]">{number}</h6>
+    <h6 class="flex justify-center text-[72px] text-yellow font-light leading-none uppercase mb-[36px]"><span id={id} class="block">0</span>{number && <span class="pl-3">{number}</span>}</h6>
     <p class="text-lg text-gray-dark font-medium">{text}</p>
 </div>
