@@ -26,7 +26,7 @@ const LanguageMenu = ({ children, locale, labelColor = 'text-black-light', arrow
                 onClick={handleClick}
                 className="is-clickable relative flex flex-row items-center justify-around h-7 z-[3]"
             >
-                <img width={30} height={18} src={`/images/icon/${locale.icon}`} alt="flag" />
+                <img width={30} height={18} src={`${import.meta.env.BASE_URL}images/icon/${locale.icon}`} alt="flag" />
                 <span className={`pl-[12px] pr-[5px] font-medium ${labelColor}`}>{locale.label}</span>
                 <ArrowDownIcon className={`${iconColor} ${isOpen ? 'rotate-180' : 'rotate-0'} transition-transform`} />
             </button>

@@ -13,7 +13,7 @@ const HeroSlide = ({ image, href, title }) => {
             <img
               width={57}
               height={32}
-              src='/images/icon/360_icon.svg'
+              src={`${import.meta.env.BASE_URL}images/icon/360_icon.svg`}
               alt='360-icon'
             />
             <span className='text-xl ml-4'>Virtual tour</span>
@@ -34,7 +34,7 @@ const HeroSlide = ({ image, href, title }) => {
             className='absolute w-full h-full object-cover'
             width={945}
             height={820}
-            src={`/images/${image}`}
+            src={`${import.meta.env.BASE_URL}images/${image}`}
             alt='slide-img'
           />
         </div>
