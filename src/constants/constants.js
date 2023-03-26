@@ -5,27 +5,27 @@ export const MENU_LIST = [
     },
     {
         title: "service",
-        href: "/service",
+        href: "#",
     },
     {
         title: "portfolio",
-        href: "/portfolio",
+        href: "#",
     },
     {
         title: "sale",
-        href: "/sale",
+        href: "#",
     },
     {
         title: "info",
-        href: "/info",
+        href: "#",
     },
     {
         title: "news",
-        href: "/news",
+        href: "#",
     },
     {
         title: "contact",
-        href: "/contact",
+        href: "#",
     },
 ];
 
@@ -37,27 +37,27 @@ export const LANG_LIST = [
 export const SLIDER_LIST = [
     {
         title: "Profitability of salt room construction is 1 year",
-        href: "/service",
+        href: "#",
         image: "hero-slide-1.webp",
     },
     {
         title: "Profitability of salt room construction is 1 year",
-        href: "/service",
+        href: "#",
         image: "hero-slide-1.webp",
     },
     {
         title: "Profitability of salt room construction is 1 year",
-        href: "/service",
+        href: "#",
         image: "hero-slide-1.webp",
     },
     {
         title: "Profitability of salt room construction is 1 year",
-        href: "/service",
+        href: "#",
         image: "hero-slide-1.webp",
     },
     {
         title: "Profitability of salt room construction is 1 year",
-        href: "/service",
+        href: "#",
         image: "hero-slide-1.webp",
     },
 ];

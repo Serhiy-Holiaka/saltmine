@@ -7,6 +7,7 @@ import MobileMenu from "../menu/MobileMenu";
 import LanguageMenu from "../menu/LanguageMenu";
 import MenuList from "../menu/MenuList.astro";
 import LanguageList from "../menu/LanguageList.astro";
+import CallIcon from "../ui/icons/CallIcon";
 import { MENU_LIST, LANG_LIST } from "../../constants/constants";
 
 const currentLanguage = i18next.language;
@@ -44,4 +45,5 @@ const activeLanguage = LANG_LIST.find(
             <MenuList menuList={MENU_LIST} />
         </MobileMenu>
     </div>
+    <button class="fixed bottom-10 right-[4%] z-50 flex items-center justify-center w-[84px] h-[84px] rounded-full border border-[#f0cc1330] hover:border-yellow transition-colors [&>span]:active:scale-110" type="button"><span class="is-clickable flex items-center justify-center w-[64px] h-[64px] rounded-full bg-yellow transition-transform"><CallIcon className="[&>path]:fill-white" /></span></button>
 </header>

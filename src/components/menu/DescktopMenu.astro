@@ -12,7 +12,7 @@ const { pathname } = Astro.url;
       <a
         class={`${
           pathname === localizePath(href) ? 'active' : ''
-        } block text-sm xl:text-base leading-none whitespace-nowrap py-3 mr-[15px] 2xl:mr-[30px] last:pr-0 border-b border-transparent hover:text-yellow hover:border-yellow transition duration-150`}
+        } is-clickable block text-sm xl:text-base leading-none whitespace-nowrap py-3 mr-[15px] 2xl:mr-[30px] last:pr-0 border-b border-transparent hover:text-yellow hover:border-yellow transition duration-150`}
         href={localizePath(href)}
       >
         {t(`menu.${title}`)}

@@ -10,7 +10,7 @@ const { menuList } = Astro.props;
         <a
             class={`${
                 pathname === localizePath(href) ? "active" : ""
-            } block text-base leading-none whitespace-nowrap text-center py-4 last:pr-0 border-b border-gray-400 border-opacity-10 last:border-transparent`}
+            } is-clickable block text-base leading-none whitespace-nowrap text-center py-4 last:pr-0 border-b border-gray-400 border-opacity-10 last:border-transparent`}
             href={localizePath(href)}
         >
             {t(`menu.${title}`)}

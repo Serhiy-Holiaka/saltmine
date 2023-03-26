@@ -1,165 +1,208 @@
 ---
-import i18next from "i18next";
-import { HeadHrefLangs } from "astro-i18next/components";
-import Header from "../components/header/Header.astro";
-import Footer from "../components/footer/Footer.astro";
+import i18next from 'i18next';
+import { HeadHrefLangs } from 'astro-i18next/components';
+import Header from '../components/header/Header.astro';
+import Footer from '../components/footer/Footer.astro';
+import ClickListener from '../components/ClickListener/ClickListener';
 
 export interface Props {
-    title: string;
-    isHeader?: boolean;
-    isFooter?: boolean;
+  title: string;
+  isHeader?: boolean;
+  isFooter?: boolean;
 }
 
 const { title, isHeader = true, isFooter = true } = Astro.props;
 ---
 
-<!DOCTYPE html>
 <html lang={i18next.language}>
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-        />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <HeadHrefLangs />
-        <title>{title}</title>
-    </head>
-    <body>
-        {isHeader && <Header />}
-        <main>
-            <slot />
-        </main>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0'
+    />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <HeadHrefLangs />
+    <title>{title}</title>
+  </head>
+  <body>
+    <ClickListener client:load>
+      {isHeader && <Header />}
+    </ClickListener>  
+      <main>
+        <slot />
+      </main>
+      <ClickListener client:load>
         {isFooter && <Footer />}
-        <style is:global>
-            @import "swiper/css";
+      </ClickListener>
+      
+    <style is:global>
+      @import 'swiper/css';
 
-            @font-face {
-                font-family: "Gilroy";
-                src: url("/fonts/Gilroy-Light.woff2") format("woff2");
-                font-weight: 300;
-                font-style: normal;
-                font-display: swap;
-            }
-            @font-face {
-                font-family: "Gilroy";
-                src: url("/fonts/Gilroy-Regular.woff2") format("woff2");
-                font-weight: 400;
-                font-style: normal;
-                font-display: swap;
-            }
-            @font-face {
-                font-family: "Gilroy";
-                src: url("/fonts/Gilroy-Medium.woff2") format("woff2");
-                font-weight: 500;
-                font-style: normal;
-                font-display: swap;
-            }
-            @font-face {
-                font-family: "Gilroy";
-                src: url("/fonts/Gilroy-Semibold.woff") format("woff");
-                font-weight: 600;
-                font-style: normal;
-                font-display: swap;
-            }
-            @font-face {
-                font-family: "Gilroy";
-                src: url("/fonts/Gilroy-Bold.woff2") format("woff2");
-                font-weight: 700;
-                font-style: normal;
-                font-display: swap;
-            }
-            :root {
-                --white: #ffffff;
-                --blue-light: #f6f7fe;
-                --black: #000000;
-                --black-light: #212121;
-                --black-dark: #181818;
-                --yellow: #f0cc13;
-                --gray: #7b8487;
-                --gray-dark: #555b5e;
-                --gray-light: #bcbcbc;
-            }
-            html {
-                background-color: var(--white);
-            }
-            .active {
-                color: var(--yellow);
-                border-color: var(--yellow);
-            }
-            .active-link {
-                color: var(--yellow);
-            }
-            .active-link:hover > svg {
-                visibility: hidden;
-            }
-            .bullet-custom {
-                cursor: pointer;
-                transition: transform ease 0.3s;
-            }
-            .bullet-custom:hover > circle {
-                stroke: var(--white);
-            }
-            .active-point {
-                transform: scale(2);
-                margin-right: 25px;
-            }
-            .active-point:last-child {
-                margin-right: 0;
-            }
-            .active-point > circle {
-                stroke: var(--yellow);
-                stroke-dasharray: 30;
-                stroke-dashoffset: 30;
-                animation: stroke 0.7s ease-out forwards;
-            }
-            .why-us-bg {
-                background-image: url("/images/bg/why-us/why-us-img-left.png"),
-                    url("/images/bg/why-us/why-us-img-right.png"),
-                    url("/images/bg/why-us/why-us-svg-top.svg"),
-                    url("/images/bg/why-us/why-us-svg-right.svg"),
-                    url("/images/bg/why-us/why-us-svg-mid.svg"),
-                    url("/images/bg/why-us/why-us-svg-bottom.svg"),
-                    url("/images/bg/why-us/why-us-svg-bottom-right.svg");
-                background-repeat: no-repeat, no-repeat, no-repeat, no-repeat,
-                    no-repeat, no-repeat, no-repeat;
-                background-position: 0% 50%, 100% 100%, 5% -3%, 90% 30%, 50% 50%,
-                    15% 75%, 85% 98%;
-                background-size: 10%, 20%, 8%, 7%, 4%, 5%, 5%;
-            }
-            .statistic-bg {
-                background-image: url("/images/bg/statistic/statistic-img-left.png"),
-                    url("/images/bg/statistic/statistic-img-right.png"),
-                    url("/images/bg/statistic/statistic-svg-top.svg"),
-                    url("/images/bg/statistic/statistic-svg-right.svg"),
-                    url("/images/bg/statistic/statistic-svg-left.svg");
-                background-repeat: no-repeat, no-repeat, no-repeat, no-repeat,
-                    no-repeat;
-                background-position: 0% 160%, 100% 65%, 5% -10%, 16% 75%,
-                    80% 25%;
-                background-size: 13%, 12%, 5%, 5%, 10%;
-            }
-            .numbers-bg {
-                background-image: url("/images/bg/numbers/numbers-svg-top.svg"),
-                    url("/images/bg/numbers/numbers-svg-left.svg"),
-                    url("/images/bg/numbers/numbers-svg-bottom.svg");
-                background-repeat: no-repeat, no-repeat, no-repeat;
-                background-position: 90% 10%, 10% 50%, 85% 97%;
-                background-size: 7%, 8%, 5%;
-            }
-            .for-you-bg {
-                background-image: url("/images/bg/for-you/for-you-left.png"),
-                    url("/images/bg/for-you/for-you-right.png");
-                background-repeat: no-repeat, no-repeat;
-                background-position: 0% 100%, 100% 100%;
-                background-size: 18%, 14%;
-            }
-            @keyframes stroke {
-                to {
-                    stroke-dashoffset: 0;
-                }
-            }
-        </style>
-    </body>
+      @font-face {
+        font-family: 'Gilroy';
+        src: url('/fonts/Gilroy-Light.woff2') format('woff2');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Gilroy';
+        src: url('/fonts/Gilroy-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Gilroy';
+        src: url('/fonts/Gilroy-Medium.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Gilroy';
+        src: url('/fonts/Gilroy-Semibold.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Gilroy';
+        src: url('/fonts/Gilroy-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      :root {
+        --white: #ffffff;
+        --blue-light: #f6f7fe;
+        --black: #000000;
+        --black-light: #212121;
+        --black-dark: #181818;
+        --yellow: #f0cc13;
+        --gray: #7b8487;
+        --gray-dark: #555b5e;
+        --gray-light: #bcbcbc;
+      }
+      html {
+        background-color: var(--white);
+      }
+      .active {
+        color: var(--yellow);
+        border-color: var(--yellow);
+      }
+      .active-link {
+        color: var(--yellow);
+      }
+      .active-link:hover > svg {
+        visibility: hidden;
+      }
+      .bullet-custom {
+        cursor: pointer;
+        transition: transform ease 0.3s;
+      }
+      .bullet-custom:hover > circle {
+        stroke: var(--white);
+      }
+      .active-point {
+        transform: scale(2);
+        margin-right: 25px;
+      }
+      .active-point:last-child {
+        margin-right: 0;
+      }
+      .active-point > circle {
+        stroke: var(--yellow);
+        stroke-dasharray: 30;
+        stroke-dashoffset: 30;
+        animation: stroke 0.7s ease-out forwards;
+      }
+      .why-us-bg {
+        background-image: url('/images/bg/why-us/why-us-img-left.png'),
+          url('/images/bg/why-us/why-us-img-right.png'),
+          url('/images/bg/why-us/why-us-svg-top.svg'),
+          url('/images/bg/why-us/why-us-svg-right.svg'),
+          url('/images/bg/why-us/why-us-svg-mid.svg'),
+          url('/images/bg/why-us/why-us-svg-bottom.svg'),
+          url('/images/bg/why-us/why-us-svg-bottom-right.svg');
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+          no-repeat, no-repeat;
+        background-position: 0% 50%, 100% 100%, 5% -3%, 90% 30%, 50% 50%,
+          15% 75%, 85% 98%;
+        background-size: 10%, 20%, 8%, 7%, 4%, 5%, 5%;
+      }
+      .statistic-bg {
+        background-image: url('/images/bg/statistic/statistic-img-left.png'),
+          url('/images/bg/statistic/statistic-img-right.png'),
+          url('/images/bg/statistic/statistic-svg-top.svg'),
+          url('/images/bg/statistic/statistic-svg-right.svg'),
+          url('/images/bg/statistic/statistic-svg-left.svg');
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+        background-position: 0% 160%, 100% 65%, 5% -10%, 16% 75%, 80% 25%;
+        background-size: 13%, 12%, 5%, 5%, 10%;
+      }
+      .numbers-bg {
+        background-image: url('/images/bg/numbers/numbers-svg-top.svg'),
+          url('/images/bg/numbers/numbers-svg-left.svg'),
+          url('/images/bg/numbers/numbers-svg-bottom.svg');
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position: 90% 10%, 10% 50%, 85% 97%;
+        background-size: 7%, 8%, 5%;
+      }
+      .for-you-bg {
+        background-image: url('/images/bg/for-you/for-you-left.png'),
+          url('/images/bg/for-you/for-you-right.png');
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0% 100%, 100% 100%;
+        background-size: 18%, 14%;
+      }
+      .is-clickable > *:not(button) {
+        pointer-events: none;
+      }
+
+      .active-clickable {
+        position: relative !important;
+      }
+
+      .active-clickable::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        animation: 1s slidein;
+        background-color: #fddd0a38;
+        border: solid 7px #fddd0a00;
+        outline: 1px solid #fddd0a;
+        background-blend-mode: difference;
+        margin: auto;
+        opacity: 0;
+        z-index: 20;
+        top: -7px;
+        left: -7px;
+        box-sizing: content-box;
+      }
+
+      @keyframes slidein {
+        0% {
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes stroke {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </body>
 </html>

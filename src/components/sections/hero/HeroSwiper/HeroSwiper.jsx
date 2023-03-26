@@ -49,13 +49,13 @@ const HeroSwiper = () => {
           <div className='flex'>
             <button
               id='prev'
-              className='flex items-center justify-center w-[36px] h-[36px] mr-4 rounded-full border border-[#393939] hover:border-yellow [&_path]:hover:stroke-white transition'
+              className='is-clickable flex items-center justify-center w-[36px] h-[36px] mr-4 rounded-full border border-[#393939] hover:border-yellow [&_path]:hover:stroke-white transition'
             >
               <ArrowIcon className='[&>path]:stroke-[#393939] transition rotate-180' />
             </button>
             <button
               id='next'
-              className='flex items-center justify-center w-[36px] h-[36px] ml-4 rounded-full border border-[#393939] hover:border-yellow [&_path]:hover:stroke-white transition'
+              className='is-clickable flex items-center justify-center w-[36px] h-[36px] ml-4 rounded-full border border-[#393939] hover:border-yellow [&_path]:hover:stroke-white transition'
             >
               <ArrowIcon className='[&>path]:stroke-[#393939] transition' />
             </button>
