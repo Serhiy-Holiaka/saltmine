@@ -156,11 +156,11 @@ export const VIDEO_LIST = [
         text: "Natural antiseptic that heals all!",
         video: [
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
         ],
@@ -170,11 +170,11 @@ export const VIDEO_LIST = [
         text: "Why Halotherapy?",
         video: [
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
         ],
@@ -184,11 +184,11 @@ export const VIDEO_LIST = [
         text: "Is salt room a panacea?",
         video: [
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
         ],
@@ -198,11 +198,11 @@ export const VIDEO_LIST = [
         text: "Online session in a salt room.",
         video: [
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
         ],
@@ -212,11 +212,11 @@ export const VIDEO_LIST = [
         text: "Salt room. Meditation. Sleep.",
         video: [
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
         ],
@@ -226,11 +226,11 @@ export const VIDEO_LIST = [
         text: "Feel the atmosphere of a salt room online.",
         video: [
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
         ],
@@ -240,11 +240,11 @@ export const VIDEO_LIST = [
         text: "Chromotherapy in salt room.",
         video: [
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
             {
-                src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                src: "saltmine-video.mp4",
                 type: "video/mp4",
             },
         ],

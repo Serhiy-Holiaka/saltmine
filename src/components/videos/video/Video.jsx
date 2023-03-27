@@ -25,7 +25,7 @@ const Videos = ({ sourcesList }) => {
       >
         {sourcesList &&
           sourcesList.map((item, i) => (
-            <source key={i} src={item.src} type={item.type} />
+            <source key={i} src={`${import.meta.env.BASE_URL}video/${item.src}`} type={item.type} />
           ))}
         Your browser is not suported!
       </video>
